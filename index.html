@@ -587,8 +587,12 @@ description: 막연한 요청을 받아 AI가 먼저 빈칸을 추측해 채우�
     var p;
     try { p = navigator.clipboard.writeText(text); } catch (e) { p = Promise.reject(e); }
     p.then(function () { setStatus(okMsg); }, function () {
+      // Older fallback for in-app browsers (e.g. messenger webviews) that block the Clipboard API
       selectOut();
-      setStatus('자동 복사가 안 돼요. 아래 내용을 선택해뒀으니 Ctrl+C(또는 길게 눌러 복사)로 복사하세요.', true);
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) {}
+      if (ok) setStatus(okMsg);
+      else setStatus('자동 복사가 안 돼요. 아래 내용을 선택해뒀으니 Ctrl+C(또는 길게 눌러 복사)로 복사하세요.', true);
     });
   }
 
