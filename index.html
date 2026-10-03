@@ -125,6 +125,20 @@ pre {
   padding: 14px 16px; max-height: 340px; overflow: auto; white-space: pre-wrap; word-break: break-word;
 }
 
+/* extension section */
+.beta { font: 500 11px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--amber); background: var(--amber-soft); border-radius: 999px; padding: 5px 9px; }
+.ext-demo { background: var(--card); border: 1px solid var(--rule); border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 8px; max-width: 520px; }
+.ext-head { display: flex; align-items: baseline; gap: 10px; padding-bottom: 8px; border-bottom: 1px dashed var(--rule); font-size: 12.5px; color: var(--muted); font-weight: 600; }
+.ext-logo { font: 700 17px/1 var(--f-display); letter-spacing: .05em; color: var(--ink); }
+.ext-q { font-size: 13.5px; font-weight: 600; }
+.ext-opts { display: flex; flex-wrap: wrap; gap: 6px; }
+.ext-opts span { font-size: 12.5px; border: 1px solid var(--rule); border-radius: 9px; padding: 6px 10px; }
+.ext-opts span.on { border-color: var(--accent); background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--accent); }
+.ext-send { align-self: flex-start; font-size: 13px; font-weight: 600; color: var(--accent-ink); background: var(--accent); border-radius: 9px; padding: 8px 14px; margin-top: 4px; }
+.install { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; font-size: 14.5px; }
+.install code { font: 500 13px var(--f-mono); background: var(--code-bg); border: 1px solid var(--rule); border-radius: 5px; padding: 1px 5px; }
+.divider { padding-top: 8px; border-top: 1px solid var(--rule); }
+
 /* worked example */
 .example { display: flex; flex-direction: column; gap: 14px; }
 .turn { display: flex; flex-direction: column; gap: 6px; max-width: 92%; }
@@ -169,6 +183,32 @@ footer { font-size: 12.5px; color: var(--muted); display: flex; flex-direction: 
       <div class="row"><span class="k">결과 보고 고치기</span><span class="dots"></span><span class="v">나</span></div>
     </div>
   </header>
+
+  <section class="step ext" aria-labelledby="sx">
+    <div class="step-head"><h2 id="sx">ChatGPT 확장 프로그램</h2><span class="beta">베타</span></div>
+    <p class="sub">복사·붙여넣기 없이, ChatGPT 입력창 위에 <b>✈ Preflight</b> 버튼이 생겨요. 확인 질문은 버튼으로 고르고, 결과는 슬라이더로 고쳐요.</p>
+    <div class="ext-demo" aria-hidden="true">
+      <div class="ext-head"><span class="ext-logo">PREFLIGHT</span><span>확인 질문</span></div>
+      <p class="ext-q">1. 어떤 보고서예요?</p>
+      <div class="ext-opts"><span>A 지난번 열기관 보고서 (지난 대화 기준)</span><span>B 다른 거야, 첨부할게</span></div>
+      <p class="ext-q">2. 어디를 중점으로 볼까요?</p>
+      <div class="ext-opts"><span class="on">A 계산·그래프·결론 · 추천</span><span>B 형식·문장</span><span>C 잘 모르겠어, 추천해줘</span></div>
+      <span class="ext-send">보내기</span>
+    </div>
+    <div class="actions">
+      <a class="btn primary" href="https://kkwoogy.github.io/preflight/downloads/preflight-extension.zip">확장 프로그램 받기 (.zip)</a>
+      <a class="btn secondary" href="https://github.com/kkwoogy/preflight/tree/main/extension" target="_blank" rel="noopener">코드 보기 ↗</a>
+    </div>
+    <ol class="install">
+      <li>받은 zip 파일의 압축을 풀어요.</li>
+      <li>크롬 주소창에 <code>chrome://extensions</code>를 열고, 오른쪽 위 <b>개발자 모드</b>를 켜요.</li>
+      <li><b>압축해제된 확장 프로그램을 로드합니다</b>를 눌러 풀어둔 폴더를 골라요.</li>
+      <li>chatgpt.com 입력창에 대충 쓰고 <b>✈ Preflight</b>를 눌러요. 단축키는 Ctrl+Shift+Enter예요.</li>
+    </ol>
+    <p class="hint">지금은 크롬·엣지와 ChatGPT에서만 돼요. 스토어에 정식 등록하기 전이라 개발자 모드로 설치해요.</p>
+  </section>
+
+  <p class="eyebrow divider">확장 없이 쓰기 · 시작 프롬프트 복사</p>
 
   <section class="step" aria-labelledby="s1">
     <div class="step-head"><span class="step-no">1</span><h2 id="s1">어떤 AI에서 쓰세요?</h2></div>

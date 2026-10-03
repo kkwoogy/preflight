@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Preflight mock chat</title>
+<link rel="stylesheet" href="../content.css">
+<style>
+  body { margin: 0; font-family: system-ui, "Malgun Gothic", sans-serif; background: #fff; color: #111; }
+  main { max-width: 720px; margin: 0 auto; padding: 20px 16px 220px; }
+  .note { font-size: 12px; color: #777; }
+  .msg { margin: 14px 0; }
+  .user { background: #f1f1f1; border-radius: 16px; padding: 10px 14px; white-space: pre-wrap; margin-left: auto; max-width: 85%; }
+  .assistant { white-space: pre-wrap; }
+  .codewrap { border-radius: 8px; overflow: hidden; margin-top: 8px; }
+  .codehead { background: #2a2a2a; color: #bbb; font-size: 12px; padding: 6px 10px; display: flex; justify-content: space-between; }
+  pre { margin: 0; background: #111; color: #eee; padding: 12px; overflow: auto; }
+  .bar { position: fixed; left: 0; right: 0; bottom: 0; padding: 16px; background: #fff; }
+  .box { max-width: 720px; margin: 0 auto; display: flex; gap: 8px; border: 1px solid #ccc; border-radius: 24px; padding: 8px 12px; }
+  textarea { flex: 1; border: 0; resize: none; font: inherit; outline: none; }
+</style>
+</head>
+<body>
+<main id="thread"><p class="note">시험용 가짜 채팅 화면이에요. 실제 ChatGPT가 아니라 정해진 답만 돌려줘요.</p></main>
+<div class="bar"><div class="box">
+  <textarea id="mobile-composer-prompt" aria-label="ChatGPT와 채팅" rows="2" placeholder="ChatGPT에게 물어보세요"></textarea>
+  <button type="button" aria-label="메시지 보내기" id="sendbtn">↑</button>
+</div></div>
+<script src="mock.js"></script>
+<script src="../instructions.js"></script>
+<script src="../content.js"></script>
+</body>
+</html>
