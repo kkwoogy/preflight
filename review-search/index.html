@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>찐후기</title>
+<meta name="description" content="협찬·체험단·쿠팡 파트너스 글을 걸러내고, 직접 써 본 사람의 후기만 모아 보는 검색">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231F6B4A'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11.5' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<main class="wrap">
+  <header class="hero">
+    <h1 class="wordmark">찐후기</h1>
+    <p class="lede">협찬·체험단·쿠팡 파트너스 글은 빼고,<br>직접 써 본 사람 후기만.</p>
+  </header>
+
+  <form id="search" class="search" role="search">
+    <label class="sr-only" for="q">찾을 물건</label>
+    <input id="q" name="q" type="search" maxlength="60" autocomplete="off" placeholder="예) 다이슨 에어랩, 무신사 스탠다드 셔츠" required>
+    <button type="submit">찾기</button>
+    <div class="sort" role="group" aria-label="정렬">
+      <button type="button" data-sort="sim" aria-pressed="true">정확도순</button>
+      <button type="button" data-sort="date" aria-pressed="false">최신순</button>
+    </div>
+  </form>
+
+  <section id="elsewhere" class="elsewhere" hidden>
+    <div class="group">
+      <h2>다른 곳에서 광고 빼고 보기</h2>
+      <div id="search-links" class="links"></div>
+    </div>
+    <div class="group">
+      <h2>쇼핑몰 구매 후기 <span class="aside">구매한 사람만 쓸 수 있는 후기예요</span></h2>
+      <div id="shop-links" class="links"></div>
+    </div>
+  </section>
+
+  <p id="notice" class="notice" hidden></p>
+
+  <section id="results" class="results" hidden aria-live="polite">
+    <p id="status" class="status"></p>
+    <div id="filters" class="filters" role="group" aria-label="보기"></div>
+    <ol id="list" class="list"></ol>
+    <p id="empty" class="empty" hidden></p>
+  </section>
+
+  <details class="how">
+    <summary>어떻게 거르나요?</summary>
+    <div class="how-body">
+      <p>네이버·다음의 공식 검색 API로 블로그·카페 글을 찾은 다음, 블로그 글은 <strong>본문을 직접 열어서</strong> 아래 표시가 있는지 봐요. 광고 표시는 보통 글 맨 위나 맨 아래에 있어서 검색 결과 요약만으로는 안 보이거든요.</p>
+      <ul>
+        <li><span class="k ad">광고·협찬</span> “쿠팡 파트너스 활동의 일환으로”, “소정의 원고료를 지원받아”, “제품을 무상으로 제공받아” 같은 문구, 쿠팡·알리 제휴 링크, 체험단 사이트 배너가 하나라도 있으면</li>
+        <li><span class="k suspect">광고 의심</span> “추천 TOP 10”, “최저가 비교” 같은 제목, 구매 링크가 3개 넘게 걸린 글처럼, 하나로는 단정할 수 없는 신호가 쌓이면</li>
+        <li><span class="k likely">찐후기 가능성 높음</span> 광고 표시가 없고 “내돈내산”, “3개월 써보니”, 단점·아쉬운 점처럼 직접 써 본 사람이 남기는 말이 있으면</li>
+        <li><span class="k clean">광고 표시 없음</span> 본문을 봤는데 광고 표시도, 직접 써 본 티도 딱히 없으면</li>
+        <li><span class="k unknown">본문 미확인</span> 카페 글처럼 로그인해야 보이는 글은 요약만 보고 판단해요</li>
+      </ul>
+      <p>표시를 숨긴 광고나, 다른 사람 이름으로 올린 바이럴은 못 거를 수 있어요. 그래서 판단 근거를 글마다 그대로 보여줘요.</p>
+    </div>
+  </details>
+</main>
+</body>
+</html>

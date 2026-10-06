@@ -1,0 +1,11 @@
+{
+  "name": "jjin-hugi",
+  "private": true,
+  "description": "협찬·체험단·제휴 글을 거른 후기 검색",
+  "type": "module",
+  "engines": { "node": ">=20.3" },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test test/*.test.mjs"
+  }
+}
